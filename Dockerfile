@@ -1,5 +1,5 @@
 FROM node:slim
-LABEL maintainer="Ibrahim Ethem DEMIRCI <https://ibrahim.demirci.com>"
+LABEL maintainer="Utku Kaynar <https://buck.ai>"
 
 WORKDIR /
 
@@ -13,6 +13,8 @@ RUN apt-get update && \
     apt clean && \
     apt-get autoremove -y && \
     apt-get autoclean
+
+COPY vroom.svg /vroom-frontend/images/vroom.svg
 
 COPY api.js /vroom-frontend/src/config/api.js
 

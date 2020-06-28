@@ -5,7 +5,7 @@ WORKDIR /
 
 RUN apt-get update && \
     apt-get install -y git && \
-    git clone --depth 1 https://github.com/VROOM-Project/vroom-frontend.git && \
+    git clone --depth 1 https://github.com/buck-ai/vroom-frontend.git && \
     cd /vroom-frontend && \
     npm install && \
     apt purge -y git && \
@@ -14,7 +14,8 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get autoclean
 
-COPY vroom.svg /vroom-frontend/images/vroom.svg
+COPY panel.js /vroom-frontend/src/controls/panel.js
+COPY index.html /vroom-frontend/index.html
 
 COPY api.js /vroom-frontend/src/config/api.js
 
